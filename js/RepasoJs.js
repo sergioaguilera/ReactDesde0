@@ -75,12 +75,30 @@ try {
     const res = await fetch('https://pokeapi.co/api/v2/pokemon')
     const data=  await res.json()
     console.log(data.results)
-    console.log(data.results.map(poke=> poke.name))
+    const NombresPokemones = data.results.map(poke=> poke.name)
+    console.log(NombresPokemones)
     } catch (error) {
         console.log(error)
     }
 }
 
 obtenerPokemones()
+
+
+console.log('***SEPTIMA PRACTICA DEL CURSO: FILTER')
+
+const obtenerPokemonesFilter=  async() => {
+try {
+    const res = await fetch('https://pokeapi.co/api/v2/pokemon')
+    const data=  await res.json()
+    console.log(data.results)
+    const NombresPokemones = data.results.filter(poke=> poke.name !== 'bulbasaur')
+    console.log(NombresPokemones)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+obtenerPokemonesFilter()
 
 
